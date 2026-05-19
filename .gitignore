@@ -8,8 +8,11 @@
 ######################
 # Build files
 ######################
+/build-*-*
+/build-*
 /build-ninja-gcc
 /build-ninja-gcc/
+/build
 /build/
 /build-*/
 /build-*-*/
