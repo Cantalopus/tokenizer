@@ -6,6 +6,10 @@
 !.vscode/settings.json
 
 ######################
-# Miscellaneous
+# Build files
 ######################
-
+/build-ninja-gcc
+/build-ninja-gcc/
+/build/
+/build-*/
+/build-*-*/
