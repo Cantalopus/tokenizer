@@ -5,19 +5,19 @@ int main(int argc, char** argv){
 
     std::cout<<"Pleas enter an expression(we can handle + and -): ";
 
-    int lval = 0;
-    int rval;
+    int lhs = 0;
+    int rhs;
     char op;
-    int res;
+    int result;
 
-    std::cin>>lval>>op>>rval;
+    std::cin>>lhs>>op>>rhs;
 
     if(op=='+')
-        res=lval+rval;
+        result=lhs+rhs;
     else if(op=='-')
-        res=lval-rval;
+        result=lhs-rhs;
 
-    std::cout<<"Result: "<<res<<'\n';
+    std::cout<<"Result: "<<result<<'\n';
     keep_window_open();
 
     return 0;

@@ -16,3 +16,14 @@
 /build/
 /build-*/
 /build-*-*/
+
+######################
+# clangd
+######################
+/.cache
+/.cache/
+
+######################
+# Virtual links
+######################
+compile_commands.json
