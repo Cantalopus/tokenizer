@@ -27,3 +27,8 @@
 # Virtual links
 ######################
 compile_commands.json
+
+######################
+# files
+######################
+tokenizer.zip

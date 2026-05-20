@@ -1,12 +1,18 @@
 #include <iostream>  
 
 #include "utilities.h"
+#include "token.h"
 
 
 int main(int argc, char** argv){
 
     std::cout<<"Pleas enter an expression(we can handle +,-,*,and /)\n";
     std::cout<<"add an x to end expression(e.g., 1+2*3x): ";
+
+    Token t;
+    t.x_kind() = '+';
+
+    std::cout<<"t kind: "<<t.x_kind()<<std::endl;
 
     int lhs = 0;
     int rhs;
