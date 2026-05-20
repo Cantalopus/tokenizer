@@ -6,9 +6,10 @@ public:
     Token(char kind);
     Token(char kind, double value);
 
-    char& x_kind();
+    char& kind();
+    double& value();
 
 private:
-    char kind;
-    double value;
+    char m_kind;
+    double m_value;
 };

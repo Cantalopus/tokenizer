@@ -10,3 +10,11 @@ add_executable(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME}
     PRIVATE include
 )
+
+add_executable(test
+    tests/tests.cpp
+    src/utilities.cpp
+    src/token.cpp
+)
+
+target_include_directories(test PRIVATE include)

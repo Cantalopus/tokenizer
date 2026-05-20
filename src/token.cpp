@@ -1,12 +1,15 @@
 #include "token.h"
 
     Token::Token()
-        :kind(' '), value(0){}
+        :m_kind(' '), m_value(0){}
     Token::Token(char kind)
-        :kind(kind), value(0){}
+        :m_kind(kind), m_value(0){}
     Token::Token(char kind, double value)
-        :kind(kind), value(value){}
+        :m_kind(kind), m_value(value){}
 
-    char& Token::x_kind(){
-        return this->kind;
+    char& Token::kind(){
+        return m_kind;
+    }
+    double& Token::value(){
+        return m_value;
     }
