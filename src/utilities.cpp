@@ -7,3 +7,6 @@ void keep_window_open(){
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cin.get();
 }
+void error(std::string message){
+    throw std::runtime_error(message);
+}
