@@ -32,3 +32,9 @@ compile_commands.json
 # files
 ######################
 tokenizer.zip
+
+######################
+# binary
+######################
+/bin
+/bin/
