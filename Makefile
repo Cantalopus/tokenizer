@@ -2,7 +2,7 @@ SRC = $(wildcard src/*.cpp)
 OBJ = $(patsubst src/%.cpp, build/%.o, $(SRC))
 
 CXX = clang++
-CXXFLAGS = -std=c++20 -Wall -Wextra
+CXXFLAGS = -std=c++20 -Wall -Wextra -g
 DEPFLAGS = -MD -MP
 OPT = -O0
 DEP = $(patsubst build/%.o,*build/%.d,$(OBJ))
