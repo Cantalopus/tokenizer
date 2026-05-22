@@ -33,6 +33,6 @@ Token get_token(){
             return Token('8', val);
         }
         default:
-            error("bad token");
+            throw std::runtime_error("bad token");
     }
 }

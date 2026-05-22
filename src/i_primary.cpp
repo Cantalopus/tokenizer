@@ -1,3 +1,5 @@
+#include <stdexcept>
+
 #include "utilities.h"
 #include "i_expression.h"
 #include "token.h"
@@ -16,6 +18,6 @@ double i_primary(){
         case '8':
             return t.value();
         default:
-            error("primary expected");
+            throw std::runtime_error("primary expected");
     }
 }
