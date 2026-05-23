@@ -10,6 +10,8 @@ extern Token_stream ts;
 double i_primary(){
     Token t = ts.get();
     switch(t.kind()){
+        case '+':
+            return +(i_primary());
         case '-':
             return -(i_primary());
         case 'q':

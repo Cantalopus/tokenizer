@@ -17,6 +17,13 @@ double i_term(){
                 lhs /= i_primary();
                 t = ts.get();
                 break;
+            case '%':
+                {
+                    double d = i_term();
+                    int i1 = int(lhs);
+                    int i2 = int(d);
+                    return i1%i2;
+                }
             default:
                 ts.putback(t);
                 return lhs;
