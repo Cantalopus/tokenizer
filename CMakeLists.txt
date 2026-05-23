@@ -9,7 +9,7 @@ add_executable(${PROJECT_NAME}
     src/i_expression.cpp
     src/i_term.cpp
     src/i_primary.cpp
-    src/get_token.cpp
+    src/token_stream.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
@@ -23,7 +23,7 @@ add_executable(test
     src/i_expression.cpp
     src/i_term.cpp
     src/i_primary.cpp
-    src/get_token.cpp
+    src/token_stream.cpp
 )
 
 target_include_directories(test PRIVATE include)
