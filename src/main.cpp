@@ -3,13 +3,15 @@
 
 #include "utilities.h"
 #include "i_expression.h"
+#include "token_stream.h"
 
+Token_stream ts;
 
 int main(int argc, char** argv){
 
     try{
         while(std::cin)
-            std::cout<<i_expression()<<'\n';
+            std::cout<<'='<<i_expression()<<'\n';
         keep_window_open();
     }
     catch(std::exception& e){
