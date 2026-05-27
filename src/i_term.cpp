@@ -1,20 +1,20 @@
-#include "i_primary.h"
+#include "i_power.h"
 #include "token.h"
 #include "token_stream.h"
 
 extern Token_stream ts;
 
 double i_term(){
-    double lhs = i_primary();
+    double lhs = i_power();
     Token t = ts.get();
     while(true){
         switch(t.kind()){
             case '*':
-                lhs *= i_primary();
+                lhs *= i_power();
                 t = ts.get();
                 break;
             case '/':
-                lhs /= i_primary();
+                lhs /= i_power();
                 t = ts.get();
                 break;
             case '%':
@@ -28,5 +28,5 @@ double i_term(){
                 ts.putback(t);
                 return lhs;
         }
-    }
+    }    
 }
