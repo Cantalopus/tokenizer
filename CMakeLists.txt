@@ -9,6 +9,7 @@ add_executable(${PROJECT_NAME}
     src/i_expression.cpp
     src/i_term.cpp
     src/i_primary.cpp
+    src/i_power.cpp
     src/token_stream.cpp
 )
 
@@ -23,6 +24,7 @@ add_executable(test
     src/i_expression.cpp
     src/i_term.cpp
     src/i_primary.cpp
+    src/i_power.cpp
     src/token_stream.cpp
 )
 
