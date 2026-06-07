@@ -1,40 +1,27 @@
-For CMake presets use:
 
-`cmake --list-presets`
+There are 2 ways to build:
+1. Using `CMake` Presets
+2. Using Root Directory `Makefile`
 
-Then for CMake preset build:
+#################################################################
 
-`cmake --preset=<preset> -S <src> -B <build>`
+1. Building with `CMake` Presets
 
-For clean builds use:
+    To see available presets use command:
+        `cmake --list-presets`
 
-`cmake --fresh -S <src> -B <build>`
+    To build with `CMake` use command:
+        `cmake --preset <preset>`
 
-The `make` command builds the binary `./bin/app` using the `clang++` compiler.
+    Example:
+        `cmake --preset debug`
 
-compiled with: 
-    `-std=c++20` 
-    `-Wall` 
-    `-Wextra` 
-    `-g` debugging info
+2. Build with `make` for debugging.
 
-Available make targets:
+    To build with `make` use :
+        `make`
 
-- `all`
-- `run`
-- `clean`
-
-{
-    // launch.json for vscode
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Launch",
-            "type": "lldb",
-            "request": "launch",
-            "program": "${workspaceFolder}/bin/app",
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        }
-    ]
-}
+    `make` targets include:
+        `all`
+        `run`
+        `clean`
