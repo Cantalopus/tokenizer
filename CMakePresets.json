@@ -1,7 +1,16 @@
 {
-    "version": 3,
+    "version": 10,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 31,
+        "patch": 0
+    },
     "configurePresets": [
         {
+            "$comment":[
+                "Generates  Unix Makefiles",
+                "Exporting compile commands for clangd"
+            ],
             "name": "base",
             "generator": "Unix Makefiles",
             "cacheVariables": {
