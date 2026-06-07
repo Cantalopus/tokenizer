@@ -1,3 +1,15 @@
+For CMake presets use:
+
+`cmake --list-presets`
+
+Then for CMake preset build:
+
+`cmake --preset=<preset> -S <src> -B <build>`
+
+For clean builds use:
+
+`cmake --fresh -S <src> -B <build>`
+
 The `make` command builds the binary `./bin/app` using the `clang++` compiler.
 
 compiled with: 
