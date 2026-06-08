@@ -18,7 +18,7 @@ There are 2 ways to build:
 
 2. Build with `make` for debugging.
 
-    To build with `make` use :
+    To build with `make` use command:
         `make`
 
     `make` targets include:

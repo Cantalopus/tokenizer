@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.31)
 
-project(tokenizer LANGUAGES CXX)
+project(calculator LANGUAGES CXX)
+
+set(CMAKE_VERBOSE_MAKEFILE OFF)
 
 add_executable(${PROJECT_NAME}
     src/main.cpp
@@ -16,6 +18,8 @@ add_executable(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME}
     PRIVATE include
 )
+
+install(TARGETS ${PROJECT_NAME})
 
 add_executable(test
     tests/tests.cpp
