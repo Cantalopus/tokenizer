@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.31)
 
 project(calculator LANGUAGES CXX)
 
+message(STATUS  "STATUS message")
+message(VERBOSE "VERBOSE message")
+message(DEBUG   "DEBUG message")
+message(TRACE   "TRACE message")
+
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 
 add_executable(${PROJECT_NAME}

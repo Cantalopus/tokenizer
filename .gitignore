@@ -16,6 +16,7 @@
 /build/
 /build-*/
 /build-*-*/
+CMakeFiles/
 
 ######################
 # clangd
@@ -32,6 +33,7 @@ compile_commands.json
 # files
 ######################
 tokenizer.zip
+CMakeCache.txt
 
 ######################
 # binary
@@ -43,3 +45,8 @@ tokenizer.zip
 # log files
 ######################
 /git_logger
+
+######################
+# CMake scripts
+######################
+cmake_install.cmake
