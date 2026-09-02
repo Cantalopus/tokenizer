@@ -6,6 +6,7 @@
 #include "token.h"
 #include "token_stream.h"
 
+
 Token_stream ts;
 
 int main(/*int argc, char** argv*/){
