@@ -1,27 +1,38 @@
 
-There are 2 ways to build:
-1. Using `CMake` Presets
-2. Using Root Directory `Makefile`
+```Mermaid
+flowchart LR
 
-#################################################################
+    TESTS(["calculator-tests"])
+    SCI(["scientific-calculator"])
+    STD(["standard-calculator"])
 
-1. Building with `CMake` Presets
+    LIB{{"lib"}}
 
-    To see available presets use command:
-        `cmake --list-presets`
+    PARSER["parser"]
+    FEATURES["features"]
+    TOKENIZER["tokenizer"]
+    UTILITIES["utilities"]
 
-    To build with `CMake` use command:
-        `cmake --preset <preset>`
+    GTEST_MAIN[["GTest::gtest_main"]]
+    GTEST[["GTest::gtest"]]
+    THREADS{{"Threads::Threads"}}
 
-    Example:
-        `cmake --preset debug`
+    TESTS -. PRIVATE .-> LIB
+    SCI -. PRIVATE .-> LIB
+    STD -. PRIVATE .-> LIB
 
-2. Build with `make` for debugging.
+    LIB -. INTERFACE .-> PARSER
+    LIB -. INTERFACE .-> TOKENIZER
+    LIB -. INTERFACE .-> UTILITIES
 
-    To build with `make` use command:
-        `make`
+    PARSER --> FEATURES
+    FEATURES --> PARSER
+    FEATURES --> TOKENIZER
+    FEATURES --> UTILITIES
 
-    `make` targets include:
-        `all`
-        `run`
-        `clean`
+    TESTS -. PRIVATE .-> GTEST_MAIN
+
+    GTEST_MAIN -. INTERFACE .-> GTEST
+    GTEST_MAIN -. INTERFACE .-> THREADS
+    GTEST -. INTERFACE .-> THREADS
+```

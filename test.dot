@@ -22,20 +22,30 @@ subgraph clusterLegend {
   legendNode3 -> legendNode6 [ style = solid ];
   legendNode0 -> legendNode7;
 }
-    "node0" [ label = "features", shape = octagon ];
-    "node1" [ label = "parser", shape = octagon ];
-    "node1" -> "node0"  // parser -> features
-    "node0" -> "node1"  // features -> parser
-    "node2" [ label = "tokenizer", shape = octagon ];
-    "node0" -> "node2"  // features -> tokenizer
-    "node3" [ label = "utilities", shape = octagon ];
-    "node0" -> "node3"  // features -> utilities
+    "node0" [ label = "calculator-tests", shape = egg ];
+    "node1" [ label = "GTest::gtest_main", shape = doubleoctagon ];
+    "node2" [ label = "GTest::gtest", shape = doubleoctagon ];
+    "node3" [ label = "Threads::Threads", shape = pentagon ];
+    "node2" -> "node3" [ style = dashed ] // GTest::gtest -> Threads::Threads
+    "node1" -> "node2" [ style = dashed ] // GTest::gtest_main -> GTest::gtest
+    "node1" -> "node3" [ style = dashed ] // GTest::gtest_main -> Threads::Threads
+    "node0" -> "node1" [ style = dotted ] // calculator-tests -> GTest::gtest_main
+    "node0" -> "node0"  // calculator-tests -> calculator-tests
     "node4" [ label = "lib", shape = pentagon ];
-    "node4" -> "node1" [ style = dashed ] // lib -> parser
-    "node4" -> "node2" [ style = dashed ] // lib -> tokenizer
-    "node4" -> "node3" [ style = dashed ] // lib -> utilities
-    "node5" [ label = "scientific-calculator", shape = egg ];
-    "node5" -> "node4" [ style = dotted ] // scientific-calculator -> lib
-    "node6" [ label = "standard-calculator", shape = egg ];
-    "node6" -> "node4" [ style = dotted ] // standard-calculator -> lib
+    "node5" [ label = "parser", shape = octagon ];
+    "node6" [ label = "features", shape = octagon ];
+    "node6" -> "node5"  // features -> parser
+    "node5" -> "node6"  // parser -> features
+    "node7" [ label = "tokenizer", shape = octagon ];
+    "node6" -> "node7"  // features -> tokenizer
+    "node8" [ label = "utilities", shape = octagon ];
+    "node6" -> "node8"  // features -> utilities
+    "node4" -> "node5" [ style = dashed ] // lib -> parser
+    "node4" -> "node7" [ style = dashed ] // lib -> tokenizer
+    "node4" -> "node8" [ style = dashed ] // lib -> utilities
+    "node0" -> "node4" [ style = dotted ] // calculator-tests -> lib
+    "node9" [ label = "scientific-calculator", shape = egg ];
+    "node9" -> "node4" [ style = dotted ] // scientific-calculator -> lib
+    "node10" [ label = "standard-calculator", shape = egg ];
+    "node10" -> "node4" [ style = dotted ] // standard-calculator -> lib
 }
