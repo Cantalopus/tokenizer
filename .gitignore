@@ -58,3 +58,8 @@ test.*
 !test.dot
 test.*.*
 test.*.*.*
+
+######################
+# System Info
+######################
+system_info.txt
