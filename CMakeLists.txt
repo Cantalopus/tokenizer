@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.31)
+
+set(VCPKG_TARGET_TRIPLET "x64-linux-dynamic" CACHE STRING "")
+
 project(calculator LANGUAGES CXX)
+
 enable_testing()
 find_package(GTest CONFIG REQUIRED)
 set(GRAPHVIZ_CUSTOM_TARGETS TRUE)
@@ -18,3 +22,4 @@ if(GTest_FOUND)
 endif()
 
 add_subdirectory(src bin)
+add_subdirectory(tests)
