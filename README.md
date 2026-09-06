@@ -1,5 +1,5 @@
 
-```Mermaid
+```mermaid
 flowchart LR
 
     TESTS(["calculator-tests"])
