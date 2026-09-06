@@ -3,10 +3,7 @@ add_subdirectory(tokenizer)
 add_subdirectory(parser)
 
 add_library(lib
-    OBJECT
-        parser
-        tokenizer
-        utilities
+    INTERFACE
 )
 
 target_link_libraries(lib
