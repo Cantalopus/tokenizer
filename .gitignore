@@ -50,3 +50,11 @@ CMakeCache.txt
 # CMake scripts
 ######################
 cmake_install.cmake
+
+######################
+# GraphViz
+######################
+test.*
+!test.dot
+test.*.*
+test.*.*.*

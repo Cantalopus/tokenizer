@@ -4,6 +4,3 @@
 add_executable(scientific-calculator 
         main.cpp
 )
-
-
-

@@ -1,0 +1,41 @@
+digraph "calculator" {
+node [
+  fontsize = "12"
+];
+subgraph clusterLegend {
+  label = "Legend";
+  color = black;
+  edge [ style = invis ];
+  legendNode0 [ label = "Executable", shape = egg ];
+  legendNode1 [ label = "Static Library", shape = octagon ];
+  legendNode2 [ label = "Shared Library", shape = doubleoctagon ];
+  legendNode3 [ label = "Module Library", shape = tripleoctagon ];
+  legendNode4 [ label = "Interface Library", shape = pentagon ];
+  legendNode5 [ label = "Object Library", shape = hexagon ];
+  legendNode6 [ label = "Unknown Library", shape = septagon ];
+  legendNode7 [ label = "Custom Target", shape = box ];
+  legendNode0 -> legendNode1 [ style = solid ];
+  legendNode0 -> legendNode2 [ style = solid ];
+  legendNode0 -> legendNode3;
+  legendNode1 -> legendNode4 [ label = "Interface", style = dashed ];
+  legendNode2 -> legendNode5 [ label = "Private", style = dotted ];
+  legendNode3 -> legendNode6 [ style = solid ];
+  legendNode0 -> legendNode7;
+}
+    "node0" [ label = "features", shape = octagon ];
+    "node1" [ label = "parser", shape = octagon ];
+    "node1" -> "node0"  // parser -> features
+    "node0" -> "node1"  // features -> parser
+    "node2" [ label = "tokenizer", shape = octagon ];
+    "node0" -> "node2"  // features -> tokenizer
+    "node3" [ label = "utilities", shape = octagon ];
+    "node0" -> "node3"  // features -> utilities
+    "node4" [ label = "lib", shape = pentagon ];
+    "node4" -> "node1" [ style = dashed ] // lib -> parser
+    "node4" -> "node2" [ style = dashed ] // lib -> tokenizer
+    "node4" -> "node3" [ style = dashed ] // lib -> utilities
+    "node5" [ label = "scientific-calculator", shape = egg ];
+    "node5" -> "node4" [ style = dotted ] // scientific-calculator -> lib
+    "node6" [ label = "standard-calculator", shape = egg ];
+    "node6" -> "node4" [ style = dotted ] // standard-calculator -> lib
+}
