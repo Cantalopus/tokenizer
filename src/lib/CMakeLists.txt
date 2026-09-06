@@ -10,7 +10,7 @@ add_library(lib
 )
 
 target_link_libraries(lib
-    PUBLIC 
+    INTERFACE 
         utilities
         tokenizer
         parser
